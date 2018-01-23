@@ -19,7 +19,7 @@ from django.conf.urls import url
 from unabjj import views
 
 urlpatterns = [
-    url(r'^$/', views.index),
+    url(r'^$', views.index),
     path('admin/', admin.site.urls),
-    path('unabjj/', include('unabjj.urls')),
+    # path('unabjj/', include('unabjj.urls')),
 ]
