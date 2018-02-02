@@ -1,1 +1,1 @@
-web: python unabjjsite/manage.py runserver
+web: python unabjjsite/manage.py runserver 0.0.0.0:$PORT
