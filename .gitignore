@@ -109,3 +109,6 @@ unabjjenv/
 
 # app specific ignores
 app/config/local.py
+
+# DS
+.DS_Store
