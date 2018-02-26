@@ -55,13 +55,11 @@ ROOT_URLCONF = 'unabjjsite.urls'
 
 STATIC_URL = '/static/'
 
-# Add these new lines
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'public')
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
