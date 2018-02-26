@@ -7,8 +7,8 @@ def index(request):
     # return HttpResponse("Hello, world. You're at the unabjj index.")
     return render(request, 'dist/landing_page.html')
 
-def contact_form(request):
-    form_class = contact_form
+def contact(request):
+    form_class = ContactForm
 
     return render(request, 'dist/landing_page.html', {
                             'form': form_class,

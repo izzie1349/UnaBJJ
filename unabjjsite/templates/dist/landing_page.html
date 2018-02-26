@@ -1,5 +1,7 @@
 {% load static %}
 {% load staticfiles %}
+{% load widget_tweaks %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,18 +105,24 @@
         <hr class="colored">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <!-- MailChimp Signup Form -->
+
+            <!-- Contact Form 1 -->
             <div id="mc_embed_signup">
               <!-- Replace the form action in the line below with your MailChimp embed action! Visit the documentation for additional instructions! -->
-              <form role="form" action="//startbootstrap.us3.list-manage.com/subscribe/post?u=531af730d8629808bd96cf489&amp;id=afb284632f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+              <form role="form" action="" method="post" novalidate>
+                  {% csrf_token %}
+                  <!-- {{ form.contact_name }} -->
+
                 <div class="input-group input-group-lg">
-                    <input type="text" name="NAME" class="form-control" id="mce-NAME" placeholder="Name">
-                    <!-- <input type="tel" name="TEL" class="form-control" id="mce-TEL" placeholder="Phone Number..." style="margin-left:5px;"> -->
-                    <input type="email" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email" style="margin-left:5px;">
+                        <!-- <label for="{{ field.id_for_label }}">{{ field.label }}</label> -->
+                            {% render_field form.contact_name class="form-control" placeholder="Name" %}
+                            {% render_field form.contact_email class="form-control" placeholder="Email", style="margin-left:5px;" %}
                       <span class="input-group-btn">
                           <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Join!</button>
                       </span>
                 </div>
+
+
                 <div id="mce-responses">
                   <div class="response" id="mce-error-response" style="display:none"></div>
                   <div class="response" id="mce-success-response" style="display:none"></div>
