@@ -6,6 +6,8 @@ from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
+import os
+
 
 
 def index(request):
@@ -35,10 +37,11 @@ def index(request):
                 "New contact form submission",
                 content,
                 "Your website" +'',
-                ['youremail@gmail.com'],
+                [os.environ.get('EMAIL')],
                 headers = {'Reply-To': contact_email }
             )
             email.send()
+
             return redirect('index')
 
     return render(request, 'dist/landing_page.html', {
