@@ -23,7 +23,6 @@ from unabjj import views
 
 
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^contact/$', views.contact, name='contact'),
+    url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
