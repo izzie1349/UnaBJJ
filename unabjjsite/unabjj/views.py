@@ -41,9 +41,9 @@ def index(request):
                     "New contact form submission",
                     template,
                     # from
-                    'unabjj@gmail.com',
+                    contact_email,
                     # to
-                    [contact_email],
+                    ['unabjj+TESTING@gmail.com'],
                 )
             except Exception as e:
                 print(e)
