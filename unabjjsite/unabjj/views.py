@@ -2,10 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from unabjj.forms import ContactForm
 
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
+
 from django.shortcuts import redirect
 from django.template import Context
-from django.template.loader import get_template
+from django.template.loader import get_template, render_to_string
 import os
 
 
@@ -24,23 +25,29 @@ def index(request):
 
             # Email the profile with the
             # contact information
-            template = get_template('contact_template.txt')
             context = {
                 'contact_name': contact_name,
                 'contact_email': contact_email,
                 'contact_phone': contact_phone,
                 'form_content': form_content,
             }
-            content = template.render(context)
 
-            email = EmailMessage(
-                "New contact form submission",
-                content,
-                "Your website" +'',
-                [os.environ.get('EMAIL')],
-                headers = {'Reply-To': contact_email }
-            )
-            email.send()
+            template = render_to_string('contact_template.txt', context)
+            # content = template.render(context)
+
+            try:
+
+                email = send_mail(
+                    "New contact form submission",
+                    template,
+                    # from
+                    'unabjj@gmail.com',
+                    # to
+                    [contact_email],
+                )
+            except Exception as e:
+                print(e)
+
 
             return redirect('index')
 
