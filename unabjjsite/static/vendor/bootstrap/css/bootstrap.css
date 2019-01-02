@@ -6319,6 +6319,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 
 .fixed-top {
   position: fixed;
+  height: 70px;
   top: 0;
   right: 0;
   left: 0;
