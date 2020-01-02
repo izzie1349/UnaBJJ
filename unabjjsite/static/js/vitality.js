@@ -133,7 +133,7 @@ $(document).ready(function() {
   		    	backdrop: 'static',
   	    		keyboard: false
   		    });
-  		}, 1000);
+  		}, 10000);
   	    $("#buttonSuccess").click(function(e){
   	    	e.preventDefault();
   	    	var url = $(this).attr("href");
