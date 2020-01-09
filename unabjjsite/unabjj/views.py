@@ -43,7 +43,7 @@ def index(request):
                     # from
                     contact_email,
                     # to
-                    ['unabjj+TESTING@gmail.com'],
+                    ['israel.alvarez00@gmail.com', 'unabjj@gmail.com'],
                 )
             except Exception as e:
                 print(e)
