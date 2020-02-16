@@ -126,21 +126,21 @@ $(document).ready(function() {
     items: 3,
   });
 
-  // Timed popup: new year special
-  if (!sessionStorage.adModal) {
-  		setTimeout(function() {
-  			$('#admodal').find('.item').first().addClass('active');
-  		    $('#admodal').modal({
-  		    	backdrop: 'static',
-  	    		keyboard: false
-  		    });
-  		}, 10000);
-  	    $("#buttonSuccess").click(function(e){
-  	    	e.preventDefault();
-  	    	var url = $(this).attr("href");
-  	    	var win = window.open(url, '_blank');
-  	    	$('#admodal').modal('hide');
-  	    })};
+  // // Timed popup: new year special
+  // if (!sessionStorage.adModal) {
+  // 		setTimeout(function() {
+  // 			$('#admodal').find('.item').first().addClass('active');
+  // 		    $('#admodal').modal({
+  // 		    	backdrop: 'static',
+  // 	    		keyboard: false
+  // 		    });
+  // 		}, 10000);
+  // 	    $("#buttonSuccess").click(function(e){
+  // 	    	e.preventDefault();
+  // 	    	var url = $(this).attr("href");
+  // 	    	var win = window.open(url, '_blank');
+  // 	    	$('#admodal').modal('hide');
+  // 	    })};
 
   // Magnific Popup jQuery Lightbox Gallery Settings
   $('.gallery-link').magnificPopup({
