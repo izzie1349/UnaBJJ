@@ -139,9 +139,9 @@ STATIC_URL = '/static/'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = os.environ.get('SENGRID_USERNAME' ,'app86351433@heroku.com')
-EMAIL_HOST_PASSWORD = os.environ.get('SENGRID_PASSWORD' ,'dl7xf09y4853')
+EMAIL_HOST = os.environ.get('MAILGUN_SMTP_SERVER')
+EMAIL_HOST_USER = os.environ.get('MAILGUN_SMTP_LOGIN')
+EMAIL_HOST_PASSWORD = os.environ.get('MAILGUN_SMTP_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
