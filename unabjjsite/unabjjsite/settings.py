@@ -140,8 +140,8 @@ STATIC_URL = '/static/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('MAILGUN_SMTP_SERVER')
-EMAIL_HOST_USER = os.environ.get('MAILGUN_SMTP_LOGIN')
-EMAIL_HOST_PASSWORD = os.environ.get('MAILGUN_SMTP_PASSWORD')
+EMAIL_HOST_USER = os.environ.get('USER')
+EMAIL_HOST_PASSWORD = os.environ.get('PASS')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
